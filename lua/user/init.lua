@@ -248,6 +248,12 @@ local config = {
       {
         "vimoutliner/vimoutliner",
       },
+      {
+        "svrana/neosolarized.nvim",
+        requires = {
+          "tjdevries/colorbuddy.nvim",
+        },
+      },
       -- TODO: 'config' attr breaks :Mason interface when enabled,
       -- *after* a PackerSync call.
       {
