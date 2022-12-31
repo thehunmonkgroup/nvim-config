@@ -449,5 +449,6 @@ local config = {
 -- Floating diagnostics message autocmd
 ------------------------------------------
 vim.cmd([[ autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
+vim.opt.scrolloff = 8
 
 return config
