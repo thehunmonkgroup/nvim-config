@@ -12,4 +12,10 @@ function _M.nmap(lhs, rhs, opts)
   _M.map("n", lhs, rhs, opts)
 end
 
+function _M.get_mason_package_install_path(package_name)
+    local mason_registry = require("mason-registry")
+    local package = mason_registry.get_package(package_name)
+    return package:get_install_path()
+end
+
 return _M
