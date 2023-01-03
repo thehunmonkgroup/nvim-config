@@ -1,5 +1,5 @@
-return {
-  php = {
+return function(default)
+  default.php = {
     {
       type = 'php',
       request = 'launch',
@@ -9,5 +9,6 @@ return {
       serverSourceRoot = "/var/local/git/my.al-dev.com",
       localSourceRoot = "/home/hunmonk/git/apartmentlines/apartmentlines.com",
     }
-  },
-}
+  }
+  return default
+end
