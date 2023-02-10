@@ -454,5 +454,6 @@ local config = {
 ------------------------------------------
 vim.cmd([[ autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
 vim.opt.scrolloff = 8
+vim.api.nvim_command("autocmd FileType php setlocal autoindent")
 
 return config
