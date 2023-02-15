@@ -74,9 +74,9 @@ local config = {
 
   -- Set dashboard header
   header = {
-    " _   _       _           ",
-    "| \\ | |_   _(_)_ __ ___  ",
-    "|  \\| \\ \\ / / | '_ ` _ \\ ",
+    " _   _       _",
+    "| \\ | |_   _(_)_ __ ___",
+    "|  \\| \\ \\ / / | '_ ` _ \\",
     "| |\\  |\\ V /| | | | | | |",
     "|_| \\_| \\_/ |_|_| |_| |_|",
   },
@@ -248,6 +248,9 @@ local config = {
       },
       {
         "vimoutliner/vimoutliner",
+      },
+      {
+        "ntpeters/vim-better-whitespace",
       },
       -- {
       --   "svrana/neosolarized.nvim",
