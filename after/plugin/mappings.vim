@@ -1,17 +1,3 @@
-if has("clipboard")
-  " ALT-x is Cut
-  vnoremap <A-x> "+x
-  vnoremap <A-S-x> "+x
-
-  " ALT-c is Copy
-  vnoremap <A-c> "+y
-  vnoremap <A-S-c> "+y
-
-  " ALT-v is Paste
-  map <A-v> "+gP
-  cmap <A-v> <C-R>+
-endif
-
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
 " were characterwise instead.

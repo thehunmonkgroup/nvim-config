@@ -5,6 +5,12 @@
 -- automatically pick-up stored data by this setting.)
 return {
   -- first key is the mode
+  [""] = {
+    ["<A-v>"] = { '"+gP', desc = "Paste to clipboard" },
+  },
+  c = {
+    ["<A-v>"] = { "<C-R>+", desc = "Paste to clipboard" },
+  },
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
@@ -22,6 +28,10 @@ return {
   v = {
     ["<"] = false,
     [">"] = false,
+    ["<A-x>"] = { '"+x', desc = "Cut to clipboard", noremap=true },
+    ["<A-S-x>"] = { '"+x', desc = "Cut to clipboard", noremap=true },
+    ["<A-c>"] = { '"+y', desc = "Copy to clipboard", noremap=true },
+    ["<A-S-c>"] = { '"+y', desc = "Copy to clipboard", noremap=true },
   },
   t = {
     -- setting a mapping to false will disable it
