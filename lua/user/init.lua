@@ -317,7 +317,6 @@ local config = {
         "c",
         "comment",
         "css",
-        "diff",
         "eex",
         "elixir",
         "erlang",
