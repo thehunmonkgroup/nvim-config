@@ -8,8 +8,3 @@ if 1
   exe 'inoremap <script> <A-v> <C-G>u' . paste#paste_cmd['i']
   exe 'vnoremap <script> <A-v> ' . paste#paste_cmd['v']
 endif
-
-" Have Vim jump to the last position when reopening a file.
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif

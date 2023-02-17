@@ -225,6 +225,9 @@ local config = {
       {
         "ntpeters/vim-better-whitespace",
       },
+      {
+        "farmergreg/vim-lastplace",
+      },
       -- TODO: 'config' attr breaks :Mason interface when enabled,
       -- *after* a PackerSync call.
       {
