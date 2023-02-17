@@ -1,9 +1,11 @@
 if has("clipboard")
   " ALT-x is Cut
   vnoremap <A-x> "+x
+  vnoremap <A-S-x> "+x
 
   " ALT-c is Copy
   vnoremap <A-c> "+y
+  vnoremap <A-S-c> "+y
 
   " ALT-v is Paste
   map <A-v> "+gP
