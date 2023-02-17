@@ -1,4 +1,10 @@
+local inspect = require("inspect")
+
 local _M = {}
+
+function _M.inspect(...)
+  print(inspect(...))
+end
 
 function _M.map(mode, lhs, rhs, opts)
   local options = { noremap = true }
