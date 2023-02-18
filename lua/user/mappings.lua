@@ -11,6 +11,12 @@ return {
   c = {
     ["<A-v>"] = { "<C-R>+", desc = "Paste to clipboard" },
   },
+  i = {
+    ["<A-;>"] = { function () return vim.fn['codeium#Accept']() end, expr = true, desc = "Codeium: accept" },
+    ["<A-l>"] = { function () return vim.fn['codeium#CycleCompletions'](1) end, expr = true, desc = "Codeium: next" },
+    ["<A-j>"] = { function () return vim.fn['codeium#CycleCompletions'](-1) end, expr = true, desc = "Codeium: previous" },
+    ["<A-k>"] = { function () return vim.fn['codeium#Clear']() end, expr = true, desc = "Codeium: clear" },
+  },
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"

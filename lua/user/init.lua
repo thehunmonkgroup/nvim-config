@@ -208,6 +208,9 @@ local config = {
       --   end,
       -- },
       {
+        "Exafunction/codeium.vim",
+      },
+      {
         "andymass/vim-matchup",
       },
       {
