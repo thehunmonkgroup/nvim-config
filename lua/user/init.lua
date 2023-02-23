@@ -5,6 +5,12 @@
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
 
+local codeium_ignore_filetypes = {
+  ["votl"] = false,
+}
+
+vim.g.codeium_filetypes = codeium_ignore_filetypes
+
 local config = {
 
   -- Configure AstroNvim updates
@@ -282,42 +288,6 @@ local config = {
         },
       },
     },
-    treesitter = { -- overrides `require("treesitter").setup(...)`
-      -- Install parsers synchronously (only applied to `ensure_installed`)
-      sync_install = true,
-      ensure_installed = {
-        "bash",
-        "c",
-        "comment",
-        "css",
-        "eex",
-        "elixir",
-        "erlang",
-        "gitattributes",
-        "gitcommit",
-        "go",
-        "help",
-        "html",
-        "http",
-        "javascript",
-        "jq",
-        "json5",
-        "lua",
-        "make",
-        "markdown",
-        "perl",
-        "php",
-        "phpdoc",
-        "python",
-        "query",
-        "ruby",
-        "rust",
-        "scss",
-        "toml",
-        "vim",
-        "yaml",
-      },
-    },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
       ensure_installed = {
@@ -429,6 +399,7 @@ local config = {
 ------------------------------------------
 vim.cmd([[ autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
 vim.opt.scrolloff = 8
-vim.api.nvim_command("autocmd FileType php setlocal autoindent")
+vim.o.autoindent = true
+vim.o.smartindent = true
 
 return config
