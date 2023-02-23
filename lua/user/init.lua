@@ -401,5 +401,6 @@ vim.cmd([[ autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, 
 vim.opt.scrolloff = 8
 vim.o.autoindent = true
 vim.o.smartindent = true
+vim.wo.wrap = true
 
 return config
