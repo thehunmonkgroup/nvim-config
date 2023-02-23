@@ -27,7 +27,7 @@ return {
     ["X"] = { "<cmd>Neotree toggle<cr>" , desc = "Toggle Neotree" },
     ["<Leader>z"] = { "<cmd>Neotree source=filesystem<cr>" , desc = "Neotree filesystem tab" },
     ["<Leader>a"] = { "<cmd>Neotree source=buffers<cr>" , desc = "Neotree buffers tab" },
-    ["<leader><leader>"] = { "<cmd>Telescope buffers<cr>" , desc = "Telescope buffers" },
+    ["<leader><leader>"] = { require("telescope.builtin").buffers , desc = "Telescope buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
