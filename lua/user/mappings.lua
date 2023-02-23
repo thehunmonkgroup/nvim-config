@@ -24,10 +24,12 @@ return {
     ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
     ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
     ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
-    ["X"] = { "<cmd>Neotree toggle<cr>" , desc = "Toggle Neotree" },
-    ["<Leader>z"] = { "<cmd>Neotree source=filesystem<cr>" , desc = "Neotree filesystem tab" },
-    ["<Leader>a"] = { "<cmd>Neotree source=buffers<cr>" , desc = "Neotree buffers tab" },
-    ["<leader><leader>"] = { require("telescope.builtin").buffers , desc = "Telescope buffers" },
+    ["X"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
+    ["<Leader>z"] = { "<cmd>Neotree source=filesystem<cr>", desc = "Neotree filesystem tab" },
+    ["<Leader>a"] = { "<cmd>Neotree source=buffers<cr>", desc = "Neotree buffers tab" },
+    ["<leader><leader>"] = { require("telescope.builtin").buffers, desc = "Telescope buffers" },
+    ["<leader>cab"] = { ":call v:lua.delete_hidden_buffers()<CR>", desc = "Close all other buffers" },
+    ["<leader>cab!"] = { ":call v:lua.delete_hidden_buffers(1)<CR>", desc = "Close all other buffers!" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },

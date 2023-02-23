@@ -403,4 +403,17 @@ vim.o.autoindent = true
 vim.o.smartindent = true
 vim.wo.wrap = true
 
+function _G.delete_hidden_buffers(force)
+  local buffers = vim.api.nvim_list_bufs()
+  for _, buffer in ipairs(buffers) do
+    if vim.fn.buflisted(buffer) and vim.fn.bufwinnr(buffer) == -1 then
+      if not force then
+        vim.api.nvim_command("bwipeout " .. buffer)
+      else
+        vim.api.nvim_command("bwipeout! " .. buffer)
+      end
+    end
+  end
+end
+
 return config
