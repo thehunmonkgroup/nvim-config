@@ -263,7 +263,22 @@ local config = {
         config = function()
           require('telescope').load_extension('dap')
         end,
-      }
+      },
+      {
+        "jackMort/ChatGPT.nvim",
+        config = function()
+          require("chatgpt").setup({
+            keymaps = {
+              submit = "<M-CR>",
+            },
+          })
+        end,
+        requires = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
+        }
+      },
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
