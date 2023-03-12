@@ -7,7 +7,7 @@
 
 local codeium_ignore_filetypes = {
   ["votl"] = false,
-  ["md"] = false,
+  ["markdown"] = false,
 }
 
 vim.g.codeium_filetypes = codeium_ignore_filetypes
