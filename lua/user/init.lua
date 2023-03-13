@@ -215,13 +215,13 @@ local config = {
       --   end,
       -- },
       {
-        "Exafunction/codeium.vim",
-      },
-      {
         "andymass/vim-matchup",
       },
       {
         "saltstack/salt-vim",
+      },
+      {
+        "lepture/vim-jinja",
       },
       {
         "nfnty/vim-nftables",
@@ -238,8 +238,6 @@ local config = {
       {
         "farmergreg/vim-lastplace",
       },
-      -- TODO: 'config' attr breaks :Mason interface when enabled,
-      -- *after* a PackerSync call.
       {
         "theHamsta/nvim-dap-virtual-text",
         requires = {
@@ -247,9 +245,6 @@ local config = {
           "nvim-treesitter/nvim-treesitter",
         },
         after = {"nvim-dap", "nvim-treesitter"},
-        config = function()
-          require("nvim-dap-virtual-text").setup()
-        end
       },
       {
         "nvim-telescope/telescope-dap.nvim",
@@ -401,16 +396,9 @@ local config = {
 ------------------------------------------
 
 if os.getenv("OPENAI_API_KEY") then
-  table.insert(config.plugins,
+  table.insert(config.plugins.init,
     {
       "jackMort/ChatGPT.nvim",
-      config = function()
-        require("chatgpt").setup({
-          keymaps = {
-            submit = "<M-CR>",
-          },
-        })
-      end,
       requires = {
         "MunifTanjim/nui.nvim",
         "nvim-lua/plenary.nvim",
@@ -418,7 +406,32 @@ if os.getenv("OPENAI_API_KEY") then
       }
     }
   )
+  table.insert(config.plugins.init,
+    {
+      "Exafunction/codeium.vim",
+    }
+  )
 end
+
+if os.getenv("IS_COLOSSUS") then
+    local mason_packages = {
+      'cssls',
+      'elixirls',
+      'html',
+      'intelephense',
+      'pylsp',
+      'solargraph',
+      'tsserver',
+      'yamlls',
+      -- TODO: These still need to be installed manually.
+      -- 'debugpy',
+      -- 'php-debug-adapter',
+    }
+    for _, package in ipairs(mason_packages) do
+      table.insert(config.plugins["mason-lspconfig"].ensure_installed, package)
+    end
+end
+
 ------------------------------------------
 -- Floating diagnostics message autocmd
 ------------------------------------------
