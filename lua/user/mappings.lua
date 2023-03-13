@@ -30,6 +30,8 @@ return {
     ["<leader><leader>"] = { require("telescope.builtin").buffers, desc = "Telescope buffers" },
     ["<leader>cab"] = { ":call v:lua.delete_hidden_buffers()<CR>", desc = "Close all other buffers" },
     ["<leader>cab!"] = { ":call v:lua.delete_hidden_buffers(1)<CR>", desc = "Close all other buffers!" },
+    ["<leader>cht"] = { ":ChatGPT<CR>", desc = "ChatGPT chat interface" },
+    ["<leader>cha"] = { ":ChatGPTActAs<CR>", desc = "ChatGPT act as" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
@@ -40,6 +42,9 @@ return {
     ["<A-S-x>"] = { '"+x', desc = "Cut to clipboard", noremap=true },
     ["<A-c>"] = { '"+y', desc = "Copy to clipboard", noremap=true },
     ["<A-S-c>"] = { '"+y', desc = "Copy to clipboard", noremap=true },
+    ["<leader>chd"] = { ":ChatGPTEditWithInstructions<CR>", desc = "ChatGPT edit with instructions" },
+    ["<leader>chc"] = { ":ChatGPTRunCustomCodeAction<CR>", desc = "ChatGPT run custom code as" },
+    ["<leader>chr"] = { ":ChatGPTRun ", desc = "ChatGPT run" },
   },
   t = {
     -- setting a mapping to false will disable it
