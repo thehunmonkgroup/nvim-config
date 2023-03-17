@@ -12,10 +12,11 @@ return {
     ["<A-v>"] = { "<C-R>+", desc = "Paste to clipboard" },
   },
   i = {
-    ["<A-;>"] = { function () return vim.fn['codeium#Accept']() end, expr = true, desc = "Codeium: accept" },
-    ["<A-l>"] = { function () return vim.fn['codeium#CycleCompletions'](1) end, expr = true, desc = "Codeium: next" },
+    ["<A-h>"] = { function () return vim.fn['codeium#Complete']() end, expr = true, desc = "Codeium: trigger completions" },
     ["<A-j>"] = { function () return vim.fn['codeium#CycleCompletions'](-1) end, expr = true, desc = "Codeium: previous" },
     ["<A-k>"] = { function () return vim.fn['codeium#Clear']() end, expr = true, desc = "Codeium: clear" },
+    ["<A-l>"] = { function () return vim.fn['codeium#CycleCompletions'](1) end, expr = true, desc = "Codeium: next" },
+    ["<A-;>"] = { function () return vim.fn['codeium#Accept']() end, expr = true, desc = "Codeium: accept" },
   },
   n = {
     -- second key is the lefthand side of the map
@@ -32,6 +33,8 @@ return {
     ["<leader>cab!"] = { ":call v:lua.delete_hidden_buffers(1)<CR>", desc = "Close all other buffers!" },
     ["<leader>cht"] = { ":ChatGPT<CR>", desc = "ChatGPT chat interface" },
     ["<leader>cha"] = { ":ChatGPTActAs<CR>", desc = "ChatGPT act as" },
+    ["<A-i>"] = { ":CodeiumAuto<CR>", desc = "Codeium auto completions" },
+    ["<A-o>"] = { ":CodeiumManual<CR>", desc = "Codeium manual completions" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
