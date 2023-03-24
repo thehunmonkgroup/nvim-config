@@ -1,9 +1,13 @@
-local inspect = require("inspect")
+local _, inspect = pcall(require, "inspect")
 
 local _M = {}
 
 function _M.inspect(...)
-  print(inspect(...))
+  if inspect then
+    print(inspect(...))
+  else
+    print(...)
+  end
 end
 
 function _M.map(mode, lhs, rhs, opts)
