@@ -11,6 +11,7 @@ local codeium_ignore_filetypes = {
 }
 
 vim.g.codeium_filetypes = codeium_ignore_filetypes
+vim.g.codeium_no_map_tab = true
 
 local config = {
 
