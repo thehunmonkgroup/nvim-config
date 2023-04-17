@@ -26,7 +26,8 @@ local astro_plugins = {
   ["nvim-lua/plenary.nvim"] = { module = "plenary" },
 
   -- Indent detection
-  ["Darazaki/indent-o-matic"] = {
+  ["thehunmonkgroup/indent-o-matic"] = {
+    branch = 'check-line-not-nil',
     opt = true,
     setup = function() table.insert(astronvim.file_plugins, "indent-o-matic") end,
     config = function() require "configs.indent-o-matic" end,
