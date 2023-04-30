@@ -225,6 +225,9 @@ local config = {
         "lepture/vim-jinja",
       },
       {
+        "tolecnal/icinga2-vim",
+      },
+      {
         "nfnty/vim-nftables",
       },
       {
