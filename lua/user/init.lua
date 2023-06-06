@@ -196,6 +196,13 @@ local config = {
           },
         },
       },
+      yamlls = {
+        settings = {
+          yaml ={
+            keyOrdering = false,
+          },
+        },
+      },
     },
   },
 
