@@ -35,6 +35,7 @@ return {
     ["<leader>cha"] = { ":ChatGPTActAs<CR>", desc = "ChatGPT act as" },
     ["<A-i>"] = { ":CodeiumAuto<CR>", desc = "Codeium auto completions" },
     ["<A-o>"] = { ":CodeiumManual<CR>", desc = "Codeium manual completions" },
+    ["<leader>k"] = { ":.w !/usr/local/bin/vim-line-to-task.sh<CR>", desc = "Convert current line to Taskwarrior task" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
