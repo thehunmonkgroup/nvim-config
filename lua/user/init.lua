@@ -452,6 +452,13 @@ vim.o.autoindent = true
 vim.o.smartindent = true
 vim.wo.wrap = true
 
+vim.api.nvim_create_autocmd({"BufEnter", "BufReadPost"}, {
+  pattern = "*.task",
+  callback = function()
+    vim.o.modelines = 0
+  end,
+})
+
 function _G.delete_hidden_buffers(force)
   local buffers = vim.api.nvim_list_bufs()
   for _, buffer in ipairs(buffers) do
