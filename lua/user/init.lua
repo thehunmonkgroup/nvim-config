@@ -446,11 +446,17 @@ end
 ------------------------------------------
 -- Floating diagnostics message autocmd
 ------------------------------------------
-vim.cmd([[ autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
 vim.opt.scrolloff = 8
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.wo.wrap = true
+
+vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
+  pattern = "*",
+  callback = function()
+    vim.diagnostic.open_float({focus=false})
+  end,
+})
 
 vim.api.nvim_create_autocmd({"BufEnter", "BufReadPost"}, {
   pattern = "*.task",
