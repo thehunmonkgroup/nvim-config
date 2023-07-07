@@ -229,7 +229,7 @@ local config = {
         "saltstack/salt-vim",
       },
       {
-        "lepture/vim-jinja",
+        "Glench/Vim-Jinja2-Syntax",
       },
       {
         "tolecnal/icinga2-vim",
