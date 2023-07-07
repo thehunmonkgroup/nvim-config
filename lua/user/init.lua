@@ -256,6 +256,9 @@ local config = {
           "nvim-treesitter/nvim-treesitter",
         },
         after = {"nvim-dap", "nvim-treesitter"},
+        config = function()
+          require('nvim-dap-virtual-text').setup()
+        end,
       },
       {
         "nvim-telescope/telescope-dap.nvim",
