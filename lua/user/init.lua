@@ -432,7 +432,8 @@ end
 if os.getenv("IS_COLOSSUS") then
     local mason_packages = {
       'cssls',
-      'elixirls',
+      -- Currently broken.
+      -- 'elixirls',
       'html',
       'intelephense',
       'pylsp',
