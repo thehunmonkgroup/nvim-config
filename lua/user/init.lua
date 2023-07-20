@@ -413,9 +413,19 @@ if os.getenv("OPENAI_API_KEY") then
   table.insert(config.plugins.init,
     {
       "jackMort/ChatGPT.nvim",
-       config = function()
-         require("chatgpt").setup()
-       end,
+      config = function()
+        require("chatgpt").setup(
+          {
+            openai_params = {
+              model = "gpt-4",
+              max_tokens = 600,
+            },
+            openai_edit_params = {
+              model = "code-davinci-edit-001",
+            },
+          }
+        )
+      end,
       requires = {
         "MunifTanjim/nui.nvim",
         "nvim-lua/plenary.nvim",
