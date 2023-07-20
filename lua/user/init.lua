@@ -413,6 +413,9 @@ if os.getenv("OPENAI_API_KEY") then
   table.insert(config.plugins.init,
     {
       "jackMort/ChatGPT.nvim",
+       config = function()
+         require("chatgpt").setup()
+       end,
       requires = {
         "MunifTanjim/nui.nvim",
         "nvim-lua/plenary.nvim",
@@ -426,7 +429,6 @@ if os.getenv("OPENAI_API_KEY") then
     }
   )
 end
-
 if os.getenv("IS_COLOSSUS") then
     local mason_packages = {
       'cssls',
