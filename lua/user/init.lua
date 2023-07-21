@@ -222,9 +222,10 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-      {
-        "andymass/vim-matchup",
-      },
+      -- TODO: This is broken in nvim 0.9
+      -- {
+      --  "andymass/vim-matchup",
+      -- },
       {
         "saltstack/salt-vim",
       },
