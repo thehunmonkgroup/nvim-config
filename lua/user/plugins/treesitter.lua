@@ -14,7 +14,6 @@ return {
     "gitattributes",
     "gitcommit",
     "go",
-    "help",
     "html",
     "http",
     "javascript",
@@ -33,6 +32,7 @@ return {
     "scss",
     "toml",
     "vim",
+    "vimdoc",
     "yaml",
   },
 }
